@@ -1,0 +1,72 @@
+/* HERO */
+.about-hero {
+  height: 50vh;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
+    url("https://images.unsplash.com/photo-1503387762-592deb58ef4e");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-hero-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* CONTENT */
+.about-content {
+  padding: 60px 0;
+}
+
+.about-img {
+  width: 100%;
+  border-radius: 15px;
+  transition: 0.4s;
+}
+
+.about-img:hover {
+  transform: scale(1.05);
+}
+
+.section-title {
+  font-weight: bold;
+  margin-bottom: 20px !important;
+}
+
+.about-text {
+  margin-bottom: 15px !important;
+  color: #555;
+}
+
+/* FEATURES */
+.about-features {
+  padding: 60px 0;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 20px;
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.feature-icon {
+  font-size: 50px !important;
+  color: #fbbf24;
+  margin-bottom: 10px;
+}
+
+/* STATS */
+.about-stats {
+  background: #111;
+  color: white;
+  padding: 60px 20px;
+}
