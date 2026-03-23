@@ -47,13 +47,17 @@ function About() {
             </Typography>
 
             <Typography className="about-text">
-              Krishna Krupa Construction provides top-quality machinery on rent
-              for all types of construction projects.
+              We are Krishna Krupa Construction, your trusted partner for renting 
+              high-quality construction machinery and equipment. We specialize in providing 
+              JCB, Hitachi, and various heavy machinery on rent for all types of 
+              construction projects.
             </Typography>
 
             <Typography className="about-text">
-              We focus on reliability, affordability, and customer satisfaction
-              with fast delivery and expert support.
+              Our fleet includes excavators, bulldozers, cranes, loaders, and other 
+              essential equipment to ensure your project runs smoothly. We focus on 
+              reliability, affordability, and customer satisfaction with fast delivery 
+              and expert support.
             </Typography>
           </Grid>
 

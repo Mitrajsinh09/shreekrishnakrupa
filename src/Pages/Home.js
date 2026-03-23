@@ -66,7 +66,7 @@ function Home() {
       </Box>
 
       {/* FEATURES SECTION */}
-      <Container id="services" className="features">
+      <Container className="features">
         <Grid container spacing={4} textAlign="center">
           <Grid item xs={12} md={4}>
             <EngineeringIcon className="feature-icon" />
@@ -86,7 +86,7 @@ function Home() {
       </Container>
 
       {/* EQUIPMENT SECTION */}
-      <Container id="equipment" className="equipment-section">
+      <Container className="equipment-section">
         <Typography variant="h4" className="section-title">
           Featured Equipment
         </Typography>
@@ -126,7 +126,7 @@ function Home() {
       </Container>
 
       {/* CTA SECTION */}
-      <Box id="contact" className="cta-section">
+      <Box className="cta-section">
         <Typography variant="h4">
           Need Equipment for Your Project?
         </Typography>
