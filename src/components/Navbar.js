@@ -93,28 +93,6 @@ function Navbar() {
             ))}
           </Box>
 
-          {/* CTA */}
-          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-            <Button
-              variant="contained"
-              onClick={() => scrollToSection("contact")}
-              sx={{
-                background: "#f4b400",
-                color: "#000",
-                fontWeight: 600,
-                px: 3,
-                py: 1,
-                borderRadius: "8px",
-                boxShadow: "0 4px 14px rgba(0,0,0,0.4)",
-                "&:hover": {
-                  background: "#ffcc00"
-                }
-              }}
-            >
-              Get Quote
-            </Button>
-          </motion.div>
-
         </Toolbar>
       </Container>
     </AppBar>

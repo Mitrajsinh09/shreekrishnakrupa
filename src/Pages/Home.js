@@ -1,149 +1,82 @@
 import React from "react";
-import {
-  Box,
-  Typography,
-  Button,
-  Grid,
-  Card,
-  CardContent,
-  CardMedia,
-  Container,
-} from "@mui/material";
-import EngineeringIcon from "@mui/icons-material/Engineering";
+import { Box, Typography, Button, Container } from "@mui/material";
 import ConstructionIcon from "@mui/icons-material/Construction";
+import InventoryIcon from "@mui/icons-material/Inventory";
 import "./Home.css";
 
-const equipmentData = [
-  {
-    id: 1,
-    name: "Excavator",
-    price: "₹5000/day",
-    image: "https://source.unsplash.com/400x300/?excavator",
-  },
-  {
-    id: 2,
-    name: "Crane",
-    price: "₹8000/day",
-    image: "https://source.unsplash.com/400x300/?crane",
-  },
-  {
-    id: 3,
-    name: "Bulldozer",
-    price: "₹7000/day",
-    image: "https://source.unsplash.com/400x300/?bulldozer",
-  },
-];
+import heroImage from "../Assets/jcb.png";
 
 function Home() {
-  return (
-    <Box>
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
-      {/* HERO SECTION */}
-      <Box id="home" className="hero-section">
-        <Container>
-          <Typography variant="h3" className="hero-title">
-            Rent Construction Equipment Easily
+  return (
+    <Box id="home">
+
+      {/* HERO */}
+      <Box
+        className="hero-section"
+        style={{ backgroundImage: `url(${heroImage})` }}
+      >
+        <Box className="overlay" />
+
+        <Container className="hero-content" sx={{ textAlign: { xs: 'center', md: 'left' } }}>
+          <Typography variant="h2" className="hero-title">
+            Shree Krishna Krupa Enterprise
           </Typography>
 
-          <Typography variant="h6" className="hero-subtitle">
-            Reliable Machines. Affordable Prices. Fast Service.
+          <Typography className="hero-subtitle">
+            Equipment Rental • Bricks • Sand • Stones
+          </Typography>
+
+          <Typography className="hero-desc">
+            Trusted partner for construction materials and heavy machinery.
           </Typography>
 
           <Button
             variant="contained"
-            size="large"
             className="hero-btn"
-            startIcon={<ConstructionIcon />}
-            onClick={() =>
-              document
-                .getElementById("equipment")
-                .scrollIntoView({ behavior: "smooth" })
-            }
+            onClick={() => scrollToSection("contact")}
           >
-            Explore Equipment
+            Get Quote
           </Button>
         </Container>
       </Box>
 
-      {/* FEATURES SECTION */}
-      <Container className="features">
-        <Grid container spacing={4} textAlign="center">
-          <Grid item xs={12} md={4}>
-            <EngineeringIcon className="feature-icon" />
-            <Typography variant="h6">High Quality Machines</Typography>
-          </Grid>
+      {/* SERVICES */}
+      <Container className="services-section">
+        <Box sx={{ textAlign: 'center', mb: 4 }}>
+          <Typography variant="h3" className="section-title">
+            Complete Construction Solutions
+          </Typography>
 
-          <Grid item xs={12} md={4}>
-            <ConstructionIcon className="feature-icon" />
-            <Typography variant="h6">Affordable Pricing</Typography>
-          </Grid>
+          <Typography variant="h6" className="section-subtitle">
+            Everything you need for your construction project in one place
+          </Typography>
+        </Box>
 
-          <Grid item xs={12} md={4}>
-            <EngineeringIcon className="feature-icon" />
-            <Typography variant="h6">Fast Delivery</Typography>
-          </Grid>
-        </Grid>
+        <Box className="services-container">
+          <Box className="service-box">
+            <ConstructionIcon className="service-icon" />
+            <Typography variant="h6">Equipment Rental</Typography>
+            <Typography>
+              JCB, Excavators and heavy machinery available on rent for all project sizes.
+            </Typography>
+          </Box>
+
+          <Box className="service-box">
+            <InventoryIcon className="service-icon" />
+            <Typography variant="h6">Building Materials</Typography>
+            <Typography>
+              High-quality bricks, sand and raw materials for strong construction.
+            </Typography>
+          </Box>
+        </Box>
       </Container>
-
-      {/* EQUIPMENT SECTION */}
-      <Container className="equipment-section">
-        <Typography variant="h4" className="section-title">
-          Featured Equipment
-        </Typography>
-
-        <Grid container spacing={4}>
-          {equipmentData.map((item) => (
-            <Grid item xs={12} md={4} key={item.id}>
-              <Card className="equipment-card">
-                <CardMedia
-                  component="img"
-                  height="200"
-                  image={item.image}
-                  alt={item.name}
-                />
-                <CardContent>
-                  <Typography variant="h6">{item.name}</Typography>
-                  <Typography color="text.secondary">
-                    {item.price}
-                  </Typography>
-
-                  <Button
-                    variant="contained"
-                    className="card-btn"
-                    onClick={() =>
-                      document
-                        .getElementById("contact")
-                        .scrollIntoView({ behavior: "smooth" })
-                    }
-                  >
-                    Rent Now
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-
-      {/* CTA SECTION */}
-      <Box className="cta-section">
-        <Typography variant="h4">
-          Need Equipment for Your Project?
-        </Typography>
-
-        <Typography sx={{ marginTop: "10px" }}>
-          Contact us for best deals and quick service
-        </Typography>
-
-        <Button
-          variant="contained"
-          size="large"
-          className="cta-btn"
-          sx={{ marginTop: "20px" }}
-        >
-          Contact Us
-        </Button>
-      </Box>
 
     </Box>
   );
