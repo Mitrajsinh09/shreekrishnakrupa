@@ -23,27 +23,47 @@ function Home() {
         style={{ backgroundImage: `url(${heroImage})` }}
       >
         <Box className="overlay" />
+        <Box className="hero-shimmer" />
 
         <Container className="hero-content" sx={{ textAlign: { xs: 'center', md: 'left' } }}>
-          <Typography variant="h2" className="hero-title">
-            Shree Krishna Krupa Enterprise
-          </Typography>
+          <Box className="title-container">
+            <Typography variant="h2" className="hero-title">
+              Shree Krishna Krupa Enterprise
+            </Typography>
+            <Box className="boy-character">
+           
+              <Box className="boy-arms">
+                <Box className="arm left-arm"></Box>
+                <Box className="arm right-arm"></Box>
+              </Box>
+            </Box>
+          </Box>
 
           <Typography className="hero-subtitle">
-            Equipment Rental • Bricks • Sand • Stones
+            Equipment Rental • Bricks • Sand • Stones  
           </Typography>
 
           <Typography className="hero-desc">
             Trusted partner for construction materials and heavy machinery.
           </Typography>
 
-          <Button
-            variant="contained"
-            className="hero-btn"
-            onClick={() => scrollToSection("contact")}
-          >
-            Get Quote
-          </Button>
+          <Box className="hero-cta-wrapper">
+            <Button
+              variant="contained"
+              className="hero-btn enhanced"
+              onClick={() => scrollToSection("contact")}
+              startIcon={<ConstructionIcon />}
+            >
+              Get Quote
+            </Button>
+            <Button
+              variant="outlined"
+              className="hero-btn secondary"
+              onClick={() => scrollToSection("services")}
+            >
+              Explore Services
+            </Button>
+          </Box>
         </Container>
       </Box>
 
@@ -52,11 +72,14 @@ function Home() {
         <Box sx={{ textAlign: 'center', mb: 4 }}>
           <Typography variant="h3" className="section-title">
             Complete Construction Solutions
+              <Typography variant="h6" className="section-subtitle">
+            Everything you need for your construction project in one place!
+          </Typography>
           </Typography>
 
-          <Typography variant="h6" className="section-subtitle">
+          {/* <Typography variant="h6" className="section-subtitle">
             Everything you need for your construction project in one place
-          </Typography>
+          </Typography> */}
         </Box>
 
         <Box className="services-container">
