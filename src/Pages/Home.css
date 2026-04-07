@@ -3,12 +3,14 @@
   height: 100vh;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   position: relative;
   display: flex;
   align-items: center;
   color: white;
   overflow: hidden;
+  will-change: transform;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .overlay {

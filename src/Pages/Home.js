@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Box, Typography, Button, Container } from "@mui/material";
 import ConstructionIcon from "@mui/icons-material/Construction";
 import InventoryIcon from "@mui/icons-material/Inventory";
@@ -7,6 +7,8 @@ import "./Home.css";
 import heroImage from "../Assets/jcb.png";
 
 function Home() {
+  const heroSectionRef = useRef(null);
+
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -14,11 +16,33 @@ function Home() {
     }
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.pageYOffset;
+      const heroSection = heroSectionRef.current;
+      
+      if (heroSection) {
+        // Parallax effect - move background up at 50% speed
+        const parallaxSpeed = 0.5;
+        const yPos = -(scrolled * parallaxSpeed);
+        heroSection.style.transform = `translateY(${yPos}px)`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    // Cleanup
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <Box id="home">
 
       {/* HERO */}
       <Box
+        ref={heroSectionRef}
         className="hero-section"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
