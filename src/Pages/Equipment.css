@@ -1,62 +1,42 @@
-/* HERO SECTION */
-.equipment-hero {
-  height: 60vh;
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
-    url("https://images.unsplash.com/photo-1504307651254-35680f356dfd");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
+/* =========================================
+   Global Equipment Styles
+========================================= */
+
+/* Enables smooth scrolling when clicking the "Enquire Now" buttons */
+html {
+  scroll-behavior: smooth;
 }
 
-.equipment-hero-title {
-  font-weight: bold;
-  margin-bottom: 20px;
+/* Ensure no horizontal overflow breaks the layout */
+#equipment {
+  overflow-x: hidden;
 }
 
-/* EQUIPMENT SECTION */
-.equipment-section {
-  padding: 60px 0;
+/* =========================================
+   Custom Scrollbar (Matches the Amber Theme)
+========================================= */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-.section-title {
-  text-align: center;
-  margin-bottom: 40px !important;
-  font-weight: bold;
-  color: #111;
+::-webkit-scrollbar-track {
+  background: #f8f9fa; /* Light gray background */
 }
 
-.equipment-card {
-  transition: 0.3s;
-  height: 100%;
+::-webkit-scrollbar-thumb {
+  background: #fbbf24; /* Amber accent */
+  border-radius: 5px;
 }
 
-.equipment-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b; /* Darker amber on hover */
 }
 
-.card-btn {
-  margin-top: 10px !important;
-  background-color: #fbbf24 !important;
-  color: black !important;
-  font-weight: bold;
-}
-
-/* CTA SECTION */
-.equipment-cta {
-  background: #111;
-  color: white;
-  text-align: center;
-  padding: 60px 20px;
-}
-
-.cta-btn {
-  margin-top: 20px !important;
-  background-color: #fbbf24 !important;
-  color: black !important;
-  font-weight: bold;
+/* =========================================
+   Image Fallbacks
+========================================= */
+/* Ensures images always look crisp and never stretch out of proportion */
+img {
+  object-fit: cover;
+  object-position: center;
 }
