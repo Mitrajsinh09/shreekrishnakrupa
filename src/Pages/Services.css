@@ -1,3 +1,5 @@
+/* SERVICES PAGE STYLES */
+
 /* HERO SECTION */
 .services-hero {
   height: 60vh;
@@ -46,21 +48,48 @@
 
 /* INTRO SECTION */
 .services-intro {
-  padding: 40px 0;
-  text-align: center;
+  padding: 30px 0;
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  margin-top: -20px;
+  padding-left: 120px;
 }
 
 .intro-text {
   font-size: 18px;
-  line-height: 1.6;
-  color: #555;
-  max-width: 800px;
-  margin: 0 auto 20px auto;
+  line-height: 1.8;
+  color: #333;
+  max-width: 900px;
+  margin: 0 auto 25px auto;
   font-weight: 400;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.intro-text:first-child {
+  margin-top: 0;
 }
 
 .intro-text:last-child {
   margin-bottom: 0;
+}
+
+/* Add professional styling */
+.services-intro::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 3px;
+  /* background: linear-gradient(90deg, #fbbf24, #f59e0b); */
+  border-radius: 2px;
+  z-index: 0;
 }
 
 /* MAIN CONTENT */
@@ -110,26 +139,60 @@
 .services-grid {
   position: relative;
   z-index: 1;
+  margin: 0 auto;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns in one row */
+  gap: 35px; /* Increase gap to prevent overlap */
+  padding: 40px 0 40px 0; /* Add gaps above and below cards */
 }
 
 .service-card.enhanced {
   height: 100%;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   text-align: left;
-  padding: 25px 20px;
+  padding: 15px 12px;
   border-radius: 16px;
   background: white;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  border: 2px solid #fbbf24;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
   display: flex;
   flex-direction: column;
-  min-height: 320px;
+  min-height: 250px;
+  margin: 0;
 }
 
 .service-card.enhanced.compact {
-  min-height: 280px;
-  padding: 20px 18px;
+  min-height: 250px;
+  padding: 15px 12px;
+  margin: 0;
+  border: 2px solid #fbbf24;
+}
+
+.service-card.enhanced::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.service-card.enhanced:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(251, 191, 36, 0.2);
+  border-color: #f59e0b;
+}
+
+.service-card.enhanced:hover::before {
+  transform: scaleX(1);
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
 }
 
 .service-card.enhanced.featured {
@@ -167,8 +230,14 @@
 }
 
 .service-card.enhanced:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 35px rgba(251, 191, 36, 0.18);
+  border-color: #f59e0b;
+}
+
+.service-card.enhanced:hover::before {
+  transform: scaleX(1);
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
 }
 
 .service-icon-wrapper {
@@ -207,9 +276,10 @@
   gap: 8px;
 }
 
+/* Remove compact card differences - all cards now same */
 .service-card.enhanced.compact .service-title {
-  font-size: 16px;
-  margin-bottom: 10px !important;
+  font-size: 18px; /* Same as regular cards */
+  margin-bottom: 12px !important; /* Same as regular cards */
 }
 
 .service-description {
