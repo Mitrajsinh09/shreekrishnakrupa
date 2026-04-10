@@ -88,20 +88,6 @@
   50% { filter: drop-shadow(0 0 30px rgba(251, 191, 36, 0.7)); }
 }
 
-.boy-text {
-  font-size: 14px;
-  color: #fbbf24;
-  font-weight: 900;
-  margin-bottom: 5px;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 5px 10px;
-  border-radius: 15px;
-  border: 2px solid #fbbf24;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
 .hero-subtitle {
   font-family: 'Arial', sans-serif;
   color: #fbbf24;

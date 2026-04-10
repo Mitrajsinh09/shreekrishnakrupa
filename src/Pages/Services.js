@@ -58,9 +58,9 @@ function Services() {
                         Our Services
           </Typography>
           <div className="hero-divider"></div>
-          <Typography variant="h6" className="hero-subtitle">
+          {/* <Typography variant="h6" className="hero-subtitle">
             Providing Top-Tier Machines, Premium Materials, and Reliable Logistics for Your Next Big Project.
-          </Typography>
+          </Typography> */}
         </Container>
       </div>
 
