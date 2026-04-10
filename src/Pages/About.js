@@ -18,12 +18,15 @@ import BusinessIcon from "@mui/icons-material/Business";
 import HandshakeIcon from "@mui/icons-material/Handshake";
 import "./About.css";
 
+import aboutImage from "../Assets/abouts.jpg";
+
 function About() {
+
   return (
     <Box id="about" className="about-page">
 
       {/* HERO */}
-      <Box className="about-hero">
+      <Box className="about-hero" style={{ backgroundImage: `url(${aboutImage})` }}>
         <Container>
           <Typography variant="h3" className="about-hero-title">
             About Shree Krishna Krupa Enterprise
@@ -138,9 +141,9 @@ function About() {
           </Typography>
         </Box>
 
-        <Grid container spacing={3} className="features-grid" direction="column" alignItems="center">
+        <Grid container spacing={4} className="features-grid" alignItems="center">
 
-          <Grid item xs={12} sm={8} md={6} lg={4}>
+          <Grid item xs={12} sm={4} md={4} lg={4}>
             <Card className="feature-card enhanced compact">
               <CardContent>
                 <Box className="feature-icon-wrapper">
@@ -159,7 +162,7 @@ function About() {
             </Card>
           </Grid>
 
-          <Grid item xs={12} sm={8} md={6} lg={4}>
+          <Grid item xs={12} sm={4} md={4} lg={4}>
             <Card className="feature-card enhanced compact">
               <CardContent>
                 <Box className="feature-icon-wrapper">
@@ -178,7 +181,7 @@ function About() {
             </Card>
           </Grid>
 
-          <Grid item xs={12} sm={8} md={6} lg={4}>
+          <Grid item xs={12} sm={4} md={4} lg={4}>
             <Card className="feature-card enhanced compact">
               <CardContent>
                 <Box className="feature-icon-wrapper">

@@ -95,44 +95,47 @@ function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Create email content
-      const emailContent = `
-        Name: ${formData.name}
-        Email: ${formData.email}
-        Phone: ${formData.phone}
-        Subject: ${formData.subject}
+      // Send email using Formspree
+      const response = await fetch('https://formspree.io/f/mlgogewy', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+          _replyto: formData.email 
+        })
+      });
+
+      if (response.ok) {
+        setSnackbar({
+          open: true,
+          message: "Message sent successfully! We'll get back to you soon.",
+          severity: "success",
+        });
         
-        Message:
-        ${formData.message}
-      `;
-
-      // Using Formspree or similar service - replace with your preferred service
-      // For now, we'll use a simple mailto link as fallback
-      const mailtoLink = `mailto:shreekrushnakrupaenterprise@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(emailContent)}`;
-      
-      // Try to open email client
-      window.open(mailtoLink, '_blank');
-
-      setSnackbar({
-        open: true,
-        message: "Email client opened! Please send the email to complete your message.",
-        severity: "success",
-      });
-      
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: "",
-      });
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        throw new Error('Form submission failed');
+      }
       
     } catch (error) {
-      console.error("Error sending email:", error);
+      console.error("Error sending message:", error);
       setSnackbar({
         open: true,
-        message: "Failed to open email client. Please try again or email us directly at shreekrushnakrupaenterprise@gmail.com",
+        message: "Failed to send message. Please try again or email us directly at shreekrushnakrupaenterprise@gmail.com",
         severity: "error",
       });
     } finally {

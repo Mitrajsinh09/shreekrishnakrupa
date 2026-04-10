@@ -55,12 +55,12 @@ function Services() {
       >
         <Container maxWidth="lg" className="hero-content">
           <Typography variant="h2" component="h2" className="hero-title">
-                        Our Services
+            Our Services
           </Typography>
           <div className="hero-divider"></div>
-          {/* <Typography variant="h6" className="hero-subtitle">
+          <Typography variant="h6" className="hero-subtitle">
             Providing Top-Tier Machines, Premium Materials, and Reliable Logistics for Your Next Big Project.
-          </Typography> */}
+          </Typography>
         </Container>
       </div>
 

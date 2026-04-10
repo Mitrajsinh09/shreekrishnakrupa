@@ -4,7 +4,7 @@ import ConstructionIcon from "@mui/icons-material/Construction";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import "./Home.css";
 
-import heroImage from "../Assets/jcb.png";
+import heroImage from "../Assets/about.png";
 
 function Home() {
   const heroSectionRef = useRef(null);
@@ -71,7 +71,7 @@ function Home() {
             Trusted partner for construction materials and heavy machinery.
           </Typography>
 
-          <Box className="hero-cta-wrapper">
+          <Box className="hero-cta-wrapper">    
             <Button
               variant="contained"
               className="hero-btn enhanced"

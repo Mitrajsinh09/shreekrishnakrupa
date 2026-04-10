@@ -5,9 +5,11 @@ import {
   Typography,
   Button,
   Box,
-  Container
+  Container,
+  IconButton
 } from "@mui/material";
 import { motion } from "framer-motion";
+import logo from "../Assets/logo.png";
 
 const navItems = [
   { label: "Home", id: "home" },
@@ -19,10 +21,62 @@ const navItems = [
 
 function Navbar() {
   const [elevate, setElevate] = useState(false);
+  const [textColor, setTextColor] = useState("#fff");
 
   useEffect(() => {
     const handleScroll = () => {
       setElevate(window.scrollY > 40);
+      
+      // Determine text color based on scroll position and actual background detection
+      if (window.scrollY > 40) {
+        // When scrolling, detect the current section's background
+        const sections = ['home', 'about', 'services', 'equipment', 'contact'];
+        const currentSection = sections.find(section => {
+          const element = document.getElementById(section);
+          if (element) {
+            const rect = element.getBoundingClientRect();
+            return rect.top <= 100 && rect.bottom >= 100;
+          }
+          return false;
+        });
+        
+        // Sections with dark backgrounds - use white text
+        const darkBackgroundSections = ['home', 'about'];
+        // Sections with light backgrounds - use dark text
+        const lightBackgroundSections = ['services', 'equipment', 'contact'];
+        
+        if (darkBackgroundSections.includes(currentSection)) {
+          setTextColor("#fff"); // White text for dark backgrounds
+        } else if (lightBackgroundSections.includes(currentSection)) {
+          setTextColor("#111"); // Dark text for light backgrounds
+        } else {
+          // Default fallback - check scroll position
+          setTextColor(window.scrollY > 200 ? "#111" : "#fff");
+        }
+      } else {
+        // At top of page - detect current section
+        const sections = ['home', 'about', 'services', 'equipment', 'contact'];
+        const currentSection = sections.find(section => {
+          const element = document.getElementById(section);
+          if (element) {
+            const rect = element.getBoundingClientRect();
+            return rect.top <= 100 && rect.bottom >= 100;
+          }
+          return false;
+        });
+        
+        // Intelligent color detection based on section
+        const darkBackgroundSections = ['home', 'about'];
+        const lightBackgroundSections = ['services', 'equipment', 'contact'];
+        
+        if (darkBackgroundSections.includes(currentSection)) {
+          setTextColor("#fff"); // White text for dark backgrounds
+        } else if (lightBackgroundSections.includes(currentSection)) {
+          setTextColor("#111"); // Dark text for light backgrounds
+        } else {
+          setTextColor("#fff"); // Default to white for safety
+        }
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -43,7 +97,10 @@ function Navbar() {
       position="fixed"
       elevation={elevate ? 6 : 0}
       sx={{
-        background: elevate ? "#111" : "transparent",
+        background: elevate ? "rgba(255, 255, 255, 0.1)" : "transparent",
+        backdropFilter: elevate ? "blur(10px)" : "none",
+        WebkitBackdropFilter: elevate ? "blur(10px)" : "none",
+        border: elevate ? "1px solid rgba(255, 255, 255, 0.2)" : "none",
         transition: "all 0.3s ease"
       }}
     >
@@ -51,12 +108,23 @@ function Navbar() {
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
 
           {/* Logo */}
-          <Typography
-            variant="h6"
-            sx={{ fontWeight: 700, letterSpacing: 1 }}
-          >
-            Shree Krishna Krupa Enterprice
-          </Typography>
+          <Box
+            component="img"
+            src={logo}
+            alt="Shree Krishna Krupa Enterprise"
+            sx={{
+              height: 120,
+              width: "auto",
+              cursor: "pointer",
+              transition: "all 0.3s ease",
+              filter: textColor === "#fff" ? "brightness(1)" : "brightness(0.8)",
+              "&:hover": {
+                transform: "scale(1.05)",
+                filter: textColor === "#fff" ? "brightness(1.1)" : "brightness(0.9)"
+              }
+            }}
+            onClick={() => scrollToSection('home')}
+          />
 
           {/* Menu */}
           <Box sx={{ display: "flex", gap: 3 }}>
@@ -69,9 +137,10 @@ function Navbar() {
                 <Button
                   onClick={() => scrollToSection(item.id)}
                   sx={{
-                    color: "#fff",
+                    color: textColor,
                     fontWeight: 500,
                     position: "relative",
+                    transition: "color 0.3s ease",
                     "&::after": {
                       content: '""',
                       position: "absolute",
@@ -79,7 +148,7 @@ function Navbar() {
                       height: "2px",
                       bottom: 0,
                       left: 0,
-                      backgroundColor: "#f4b400",
+                      backgroundColor: textColor === "#fff" ? "#f4b400" : "#111",
                       transition: "0.3s"
                     },
                     "&:hover::after": {

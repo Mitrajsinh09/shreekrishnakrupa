@@ -2,8 +2,6 @@
 .about-hero {
   height: 70vh;
   min-height: 500px;
-  background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
-    url("https://images.unsplash.com/photo-1503387762-592deb58ef4e");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -14,6 +12,8 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  will-change: transform;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .about-hero::before {
@@ -23,26 +23,38 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, 
-    rgba(251, 191, 36, 0.1) 0%, 
-    transparent 50%, 
-    rgba(245, 158, 11, 0.1) 100%);
-  animation: heroShimmer 8s ease-in-out infinite;
+  background: inherit;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: blur(3px);
+  z-index: 1;
 }
 
-@keyframes heroShimmer {
-  0%, 100% { opacity: 0.3; transform: translateX(-100%); }
-  50% { opacity: 0.6; transform: translateX(100%); }
+.about-hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
+  z-index: 2;
 }
 
 .about-hero-title {
-  font-weight: bold;
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-weight: 400;
   margin-bottom: 20px;
   font-size: 3.5rem;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  color: #ffffff;
+  text-shadow: 0 2px 15px rgba(0,0,0,0.8), 0 0 30px rgba(251, 191, 36, 0.4);
   animation: titleSlideIn 1s ease-out;
   position: relative;
-  z-index: 2;
+  z-index: 3;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  filter: drop-shadow(0 2px 15px rgba(0,0,0,0.8));
 }
 
 @keyframes titleSlideIn {
@@ -52,10 +64,15 @@
 
 .about-hero h6 {
   font-size: 1.3rem;
-  opacity: 0.9;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: inline-block;
+  opacity: 1;
   animation: subtitleFadeIn 1.5s ease-out;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 @keyframes subtitleFadeIn {
