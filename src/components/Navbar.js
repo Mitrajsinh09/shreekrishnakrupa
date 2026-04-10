@@ -95,65 +95,61 @@ function Navbar() {
   return (
     <AppBar
       position="fixed"
-      elevation={elevate ? 6 : 0}
+      elevation={0}
       sx={{
-        background: elevate ? "rgba(255, 255, 255, 0.1)" : "transparent",
-        backdropFilter: elevate ? "blur(10px)" : "none",
-        WebkitBackdropFilter: elevate ? "blur(10px)" : "none",
-        border: elevate ? "1px solid rgba(255, 255, 255, 0.2)" : "none",
-        transition: "all 0.3s ease"
+        background: "rgba(0, 0, 0, 0.7)",
+        backdropFilter: "blur(20px)",
+        WebkitBackdropFilter: "blur(20px)",
+        border: "1px solid rgba(255, 255, 255, 0.1)",
+        transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+        boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)"
       }}
     >
       <Container maxWidth="xl">
-        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Toolbar sx={{ display: "flex", justifyContent: "space-between", minHeight: "70px" }}>
 
-          {/* Logo */}
-          <Box
-            component="img"
-            src={logo}
-            alt="Shree Krishna Krupa Enterprise"
+          {/* Company Name */}
+          <Typography
+            variant="h5"
             sx={{
-              height: 120,
-              width: "auto",
+              color: "#ffffff",
+              fontWeight: 700,
+              fontSize: "1.2rem",
               cursor: "pointer",
               transition: "all 0.3s ease",
-              filter: textColor === "#fff" ? "brightness(1)" : "brightness(0.8)",
               "&:hover": {
                 transform: "scale(1.05)",
-                filter: textColor === "#fff" ? "brightness(1.1)" : "brightness(0.9)"
+                color: "#f4b400"
               }
             }}
             onClick={() => scrollToSection('home')}
-          />
+          >
+            Shree Krishna Krupa
+          </Typography>
 
           {/* Menu */}
-          <Box sx={{ display: "flex", gap: 3 }}>
-            {navItems.map((item) => (
+          <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
+            {navItems.map((item, index) => (
               <motion.div
                 key={item.id}
-                whileHover={{ scale: 1.1 }}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.1, y: -3 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <Button
                   onClick={() => scrollToSection(item.id)}
                   sx={{
-                    color: textColor,
-                    fontWeight: 500,
-                    position: "relative",
-                    transition: "color 0.3s ease",
-                    "&::after": {
-                      content: '""',
-                      position: "absolute",
-                      width: "0%",
-                      height: "2px",
-                      bottom: 0,
-                      left: 0,
-                      backgroundColor: textColor === "#fff" ? "#f4b400" : "#111",
-                      transition: "0.3s"
-                    },
-                    "&:hover::after": {
-                      width: "100%"
-                    }
+                    color: "#ffffff",
+                    fontWeight: 600,
+                    fontSize: "0.9rem",
+                    textTransform: "none",
+                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                    background: "transparent",
+                    border: "none",
+                    boxShadow: "none",
+                    padding: "8px 16px"
                   }}
                 >
                   {item.label}
@@ -166,6 +162,7 @@ function Navbar() {
       </Container>
     </AppBar>
   );
+
 }
 
 export default Navbar;
