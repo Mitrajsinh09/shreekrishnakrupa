@@ -389,6 +389,40 @@
   padding: 30px 20px;
 }
 
+.feature-card.enhanced.compact.horizontal {
+  min-height: 320px;
+  padding: 20px 15px;
+  max-width: 300px;
+  flex: 1;
+}
+
+.feature-card.enhanced.compact.horizontal .feature-title {
+  font-size: 16px !important;
+  margin-bottom: 8px !important;
+}
+
+.feature-card.enhanced.compact.horizontal .feature-description {
+  font-size: 13px !important;
+  margin-bottom: 12px !important;
+}
+
+.feature-card.enhanced.compact.horizontal .feature-icon-wrapper {
+  margin-bottom: 15px !important;
+}
+
+.feature-card.enhanced.compact.horizontal .feature-icon {
+  font-size: 35px !important;
+}
+
+.feature-card.enhanced.compact.horizontal .feature-points {
+  margin-top: 10px !important;
+}
+
+.feature-card.enhanced.compact.horizontal .feature-point {
+  font-size: 11px !important;
+  margin-bottom: 4px !important;
+}
+
 .feature-card.enhanced::before {
   content: '';
   position: absolute;

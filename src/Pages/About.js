@@ -141,10 +141,10 @@ function About() {
           </Typography>
         </Box>
 
-        <Grid container spacing={4} className="features-grid" alignItems="center">
+        <Grid container spacing={2} className="features-grid" alignItems="center">
 
           <Grid item xs={12} sm={4} md={4} lg={4}>
-            <Card className="feature-card enhanced compact">
+            <Card className="feature-card enhanced compact horizontal">
               <CardContent>
                 <Box className="feature-icon-wrapper">
                   <EngineeringIcon className="feature-icon animated" />
@@ -154,16 +154,16 @@ function About() {
                   Professional guidance and 24/7 support for all your equipment needs.
                 </Typography>
                 <Box className="feature-points">
-                  <Typography className="feature-point">✓ Certified Technicians</Typography>
-                  <Typography className="feature-point">✓ Expert Guidance</Typography>
-                  <Typography className="feature-point">✓ 24/7 Support</Typography>
+                  <Typography className="feature-point">÷ Certified Technicians</Typography>
+                  <Typography className="feature-point">÷ Expert Guidance</Typography>
+                  <Typography className="feature-point">÷ 24/7 Support</Typography>
                 </Box>
               </CardContent>
             </Card>
           </Grid>
 
           <Grid item xs={12} sm={4} md={4} lg={4}>
-            <Card className="feature-card enhanced compact">
+            <Card className="feature-card enhanced compact horizontal">
               <CardContent>
                 <Box className="feature-icon-wrapper">
                   <BuildIcon className="feature-icon animated" />
@@ -173,16 +173,16 @@ function About() {
                   Well-maintained, modern machinery for optimal performance and safety.
                 </Typography>
                 <Box className="feature-points">
-                  <Typography className="feature-point">✓ Modern Fleet</Typography>
-                  <Typography className="feature-point">✓ Regular Maintenance</Typography>
-                  <Typography className="feature-point">✓ Safety Certified</Typography>
+                  <Typography className="feature-point">÷ Modern Fleet</Typography>
+                  <Typography className="feature-point">÷ Regular Maintenance</Typography>
+                  <Typography className="feature-point">÷ Safety Certified</Typography>
                 </Box>
               </CardContent>
             </Card>
           </Grid>
 
           <Grid item xs={12} sm={4} md={4} lg={4}>
-            <Card className="feature-card enhanced compact">
+            <Card className="feature-card enhanced compact horizontal">
               <CardContent>
                 <Box className="feature-icon-wrapper">
                   <VerifiedIcon className="feature-icon animated" />
@@ -192,9 +192,9 @@ function About() {
                   Reliable service with on-time delivery and competitive pricing always.
                 </Typography>
                 <Box className="feature-points">
-                  <Typography className="feature-point">✓ On-Time Delivery</Typography>
-                  <Typography className="feature-point">✓ Best Prices</Typography>
-                  <Typography className="feature-point">✓ 10+ Years Trust</Typography>
+                  <Typography className="feature-point">÷ On-Time Delivery</Typography>
+                  <Typography className="feature-point">÷ Best Prices</Typography>
+                  <Typography className="feature-point">÷ 10+ Years Trust</Typography>
                 </Box>
               </CardContent>
             </Card>
