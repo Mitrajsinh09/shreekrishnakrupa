@@ -212,6 +212,7 @@ function Navbar() {
       </Container>
     </AppBar>
   );
+
 }
 
 export default Navbar;
