@@ -18,7 +18,7 @@ import BusinessIcon from "@mui/icons-material/Business";
 import HandshakeIcon from "@mui/icons-material/Handshake";
 import "./About.css";
 
-import aboutImage from "../Assets/abouts.jpg";
+import aboutImage from "../Assets/about.jpg";
 
 function About() {
 
@@ -29,7 +29,7 @@ function About() {
       <Box className="about-hero" style={{ backgroundImage: `url(${aboutImage})` }}>
         <Container>
           <Typography variant="h3" className="about-hero-title">
-            About Shree Krishna Krupa Enterprise
+            About Shree Krushna Krupa Enterprise
           </Typography>
           <Typography variant="h6">
             Trusted Construction Equipment Rental Service Since 2014
@@ -65,7 +65,7 @@ function About() {
                   </Typography>
                 </Box>
                 <Typography className="card-content">
-                  Welcome to Shree Krishna Krupa Enterprise, your premier destination for 
+                  Welcome to Shree Krushna Krupa Enterprise, your premier destination for 
                   high-quality construction equipment rental services. With over a decade of 
                   experience, we've become the trusted partner for construction companies 
                   throughout the region.
@@ -134,7 +134,7 @@ function About() {
       <Container className="about-features">
         <Box className="features-header" textAlign="center">
           <Typography variant="h3" className="features-title">
-            Why Choose Shree Krishna Krupa
+            Why Choose Shree Krushna Krupa
           </Typography>
           <Typography variant="subtitle1" className="features-subtitle">
             Your Trusted Partner in Construction Excellence

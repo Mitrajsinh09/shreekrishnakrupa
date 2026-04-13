@@ -45,29 +45,56 @@ function Services() {
   return (
     <div id="services" className="services-page-wrapper">
       
-      {/* Animated Hero Banner Section */}
+      {/* Enhanced Hero Banner Section */}
       <div 
-        className="services-hero-banner fade-in-up"
+        className="services-hero-banner hero-enhanced fade-in-up"
         style={{
-          backgroundImage: `linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8)), url(${servicesImage})`,
+          backgroundImage: `linear-gradient(135deg, rgba(17, 24, 39, 0.85) 0%, rgba(31, 41, 55, 0.9) 50%, rgba(17, 24, 39, 0.85) 100%), url(${servicesImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
+          backgroundRepeat: 'no-repeat',
+          position: 'relative'
         }}
       >
+        {/* Animated overlay particles */}
+        <div className="hero-particles">
+          <div className="particle particle-1"></div>
+          <div className="particle particle-2"></div>
+          <div className="particle particle-3"></div>
+          <div className="particle particle-4"></div>
+          <div className="particle particle-5"></div>
+        </div>
+        
         <Container maxWidth="lg" className="hero-content">
-          <Typography variant="h2" component="h2" className="hero-title">
-            Our Services
+          {/* Animated badge */}
+          <div className="hero-badge">
+            <span className="badge-text">CONSTRUCTION SERVICES</span>
+          </div>
+          
+          <Typography variant="h1" component="h1" className="hero-title">
+            OUR SERVICES
           </Typography>
-          <div className="hero-divider"></div>
+          
+          <div className="hero-divider">
+            <div className="divider-line"></div>
+            <div className="divider-dot"></div>
+            <div className="divider-line"></div>
+          </div>
+          
           <Typography variant="h6" className="hero-subtitle">
             Providing Top-Tier Machines, Premium Materials, and Reliable Logistics for Your Next Big Project.
           </Typography>
         </Container>
+        
+        {/* Scroll indicator */}
+        <div className="scroll-indicator">
+          <div className="scroll-dot"></div>
+          <div className="scroll-text">Scroll to explore</div>
+        </div>
       </div>
 
       {/* Services Grid Section */}
-      <Container maxWidth="lg" className="services-grid-container">
+      <Container maxWidth="lg" className="services-grid-container" id="services-grid">
         <Grid container spacing={4} justifyContent="center">
           {services.map((service, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>

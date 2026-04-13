@@ -58,7 +58,7 @@ function Equipment() {
     <Box
       id="equipment"
       sx={{
-        py: 8,
+        py: 4,
         background: "linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)",
         color: "#111",
         position: "relative",
@@ -72,24 +72,29 @@ function Equipment() {
           <Typography
             variant="h2"
             component="h2"
+            className="section-title"
             gutterBottom
             sx={{
               fontWeight: 700,
-              color: "#111",
+              color: "#111827",
               position: "relative",
               display: "inline-block",
               mb: 2,
               fontSize: { xs: "2.5rem", md: "3.5rem" },
+              fontFamily: "'Poppins', 'Arial', sans-serif",
+              textTransform: "capitalize",
+              letterSpacing: "1px",
               "&::after": {
                 content: '""',
                 position: "absolute",
-                bottom: -10,
+                bottom: -12,
                 left: "50%",
                 transform: "translateX(-50%)",
-                width: "80px",
+                width: "100px",
                 height: "4px",
                 background: "linear-gradient(90deg, #fbbf24, #f59e0b)",
                 borderRadius: "2px",
+                animation: "titleUnderline 3s ease-in-out infinite",
               },
             }}
           >
@@ -97,7 +102,16 @@ function Equipment() {
           </Typography>
           <Typography
             variant="h6"
-            sx={{ color: "#666", maxWidth: 600, mx: "auto", mt: 3 }}
+            className="section-subtitle"
+            sx={{ 
+              color: "#6b7280", 
+              maxWidth: 600, 
+              mx: "auto", 
+              mt: 3,
+              fontFamily: "'Poppins', 'Arial', sans-serif",
+              fontStyle: "italic",
+              opacity: 0.8
+            }}
           >
             Powerful, well-maintained machines ready to tackle your toughest construction needs.
           </Typography>
@@ -161,10 +175,10 @@ function Equipment() {
                 </Box>
 
                 <CardContent sx={{ flexGrow: 1, display: "flex", flexDirection: "column", p: 3 }}>
-                  <Typography variant="h5" sx={{ fontWeight: 700, mb: 1, color: "#111" }}>
+                  <Typography variant="h5" sx={{ fontWeight: 700, mb: 1, color: "#111", fontFamily: "'Poppins', 'Arial', sans-serif" }}>
                     {item.name}
                   </Typography>
-                  <Typography variant="body2" sx={{ color: "#555", mb: 2, flexGrow: 1, lineHeight: 1.6 }}>
+                  <Typography variant="body2" sx={{ color: "#555", mb: 2, flexGrow: 1, lineHeight: 1.6, fontFamily: "'Poppins', 'Arial', sans-serif" }}>
                     {item.desc}
                   </Typography>
 
@@ -172,7 +186,7 @@ function Equipment() {
 
                   <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
                     <CheckCircleOutline fontSize="small" sx={{ mr: 1, color: "#f59e0b" }} />
-                    <Typography variant="caption" sx={{ fontWeight: 600, color: "#111" }}>
+                    <Typography variant="caption" sx={{ fontWeight: 600, color: "#111", fontFamily: "'Poppins', 'Arial', sans-serif" }}>
                       Available for Hire
                     </Typography>
                   </Box>
@@ -209,29 +223,44 @@ function Equipment() {
           <Typography
             variant="h4"
             gutterBottom
+            className="section-title"
             sx={{
-              fontWeight: 600,
-              color: "#111",
+              fontWeight: 700,
+              color: "#111827",
               position: "relative",
               display: "inline-block",
               mb: 3,
+              fontFamily: "'Poppins', 'Arial', sans-serif",
+              textTransform: "capitalize",
+              letterSpacing: "1px",
               "&::after": {
                 content: '""',
                 position: "absolute",
-                bottom: -10,
+                bottom: -12,
                 left: "50%",
                 transform: "translateX(-50%)",
-                width: "80px",
+                width: "100px",
                 height: "4px",
                 background: "linear-gradient(90deg, #fbbf24, #f59e0b)",
                 borderRadius: "2px",
+                animation: "titleUnderline 3s ease-in-out infinite",
               },
             }}
           >
             Need Equipment for Your Project?
           </Typography>
-          <Typography variant="h6" sx={{ color: "#666", mb: 4 }}>
-            Get the best machines with reliable service and competitive rates.
+          <Typography 
+            variant="h6" 
+            className="section-subtitle"
+            sx={{ 
+              color: "#6b7280", 
+              mb: 4,
+              fontFamily: "'Poppins', 'Arial', sans-serif",
+              fontStyle: "italic",
+              opacity: 0.8
+            }}
+          >
+            Get best machines with reliable service and competitive rates.
           </Typography>
 
           <Button

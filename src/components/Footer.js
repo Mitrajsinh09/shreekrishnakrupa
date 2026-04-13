@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
   return (
     <footer style={styles.footer}>
-      <p>© 2026 Krishna Krupa Construction Rentals</p>
+      <p>© 2026 Krushna Krupa Construction Rentals</p>
     </footer>
   );
 }
