@@ -48,3 +48,55 @@ img {
   object-fit: cover;
   object-position: center;
 }
+
+/* COMPREHENSIVE RESPONSIVE DESIGN */
+
+/* Mobile Devices (0-768px) */
+@media (max-width: 768px) {
+  #equipment {
+    padding: 40px 15px;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+}
+
+/* Small Mobile Devices (0-480px) */
+@media (max-width: 480px) {
+  #equipment {
+    padding: 30px 10px;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+}
+
+/* Tablet Devices (768px-1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  #equipment {
+    padding: 50px 20px;
+  }
+}
+
+/* Laptop Devices (1024px-1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  #equipment {
+    padding: 60px 25px;
+  }
+}
+
+/* Desktop Devices (1440px+) */
+@media (min-width: 1441px) {
+  #equipment {
+    padding: 70px 30px;
+  }
+}
+
+/* Extra Large Screens (1920px+) */
+@media (min-width: 1921px) {
+  #equipment {
+    padding: 80px 40px;
+  }
+}

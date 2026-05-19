@@ -50,7 +50,7 @@ function Home() {
       >
         <Box className="overlay" />
 
-        <Container className="hero-content" sx={{ textAlign: { xs: 'center', md: 'left' } }}>
+        <Container className="hero-content" sx={{ textAlign: { xs: 'center', md: 'left' }, marginTop: { xs: '-20px', md: '-80px' } }}>
           <Fade in={isVisible} timeout={800}>
             <Box className="hero-logo-container">
               <img 

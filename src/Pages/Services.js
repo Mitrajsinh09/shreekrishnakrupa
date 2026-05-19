@@ -29,8 +29,8 @@ const services = [
     icon: <InventoryIcon className="service-icon-svg" />,
     tag: "Materials"
   },
-  {
-    title: "Fast Delivery",
+      {
+title: "Fast Delivery",
     desc: "Quick and reliable delivery to your construction site.",
     icon: <LocalShippingIcon className="service-icon-svg" />,
     tag: "Logistics"
