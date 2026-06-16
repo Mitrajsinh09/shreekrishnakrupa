@@ -36,3 +36,63 @@
     transform: rotate(360deg);
   }
 }
+
+/* COMPREHENSIVE RESPONSIVE DESIGN */
+
+/* Mobile Devices (0-768px) */
+@media (max-width: 768px) {
+  .App-logo {
+    height: 30vmin;
+  }
+  
+  .App-header {
+    font-size: calc(8px + 2vmin);
+  }
+}
+
+/* Small Mobile Devices (0-480px) */
+@media (max-width: 480px) {
+  .App-logo {
+    height: 25vmin;
+  }
+  
+  .App-header {
+    font-size: calc(7px + 2vmin);
+  }
+}
+
+/* Tablet Devices (768px-1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .App-logo {
+    height: 35vmin;
+  }
+  
+  .App-header {
+    font-size: calc(9px + 2vmin);
+  }
+}
+
+/* Laptop Devices (1024px-1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .App-logo {
+    height: 38vmin;
+  }
+}
+
+/* Desktop Devices (1440px+) */
+@media (min-width: 1441px) {
+  .App-logo {
+    height: 42vmin;
+  }
+  
+  .App-header {
+    font-size: calc(11px + 2vmin);
+  }
+}
+
+/* Extra Large Screens (1920px+) */
+@media (min-width: 1921px) {
+  .App-logo {
+    height: 45vmin;
+  }
+}

@@ -11,3 +11,47 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* COMPREHENSIVE RESPONSIVE DESIGN */
+
+/* Mobile Devices (0-768px) */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* Small Mobile Devices (0-480px) */
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+}
+
+/* Tablet Devices (768px-1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+/* Laptop Devices (1024px-1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* Desktop Devices (1440px+) */
+@media (min-width: 1441px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* Extra Large Screens (1920px+) */
+@media (min-width: 1921px) {
+  body {
+    font-size: 17px;
+  }
+}
